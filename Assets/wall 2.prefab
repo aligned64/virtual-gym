@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8735011425490269796}
   - component: {fileID: 2373332262150804772}
   m_Layer: 0
-  m_Name: Wall
+  m_Name: wall 2
   m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3132312355702293510}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.901, y: 0.532, z: 0.085}
-  m_LocalScale: {x: 3.7949958, y: 1, z: 0.070789}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.06, y: 1.91, z: 7.71}
+  m_LocalScale: {x: 15.08844, y: 3.794183, z: 0.070789}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &4312553701925070919
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 101773f6372afc54b82c2867326d2bbe, type: 2}
+  - {fileID: 2100000, guid: 77a05708f3c23184daf8d93ec571d707, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,14 +94,14 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
-  m_LayerOverridePriority: 1
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.0000004, y: 1.0000001, z: 1.0000002}
   m_Center: {x: 0, y: 0, z: 0}
