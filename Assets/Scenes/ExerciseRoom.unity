@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.01
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
@@ -926,7 +926,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.01
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
@@ -1156,7 +1156,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7af3d5f2971b3f645bdfe36a1abc620a, type: 2}
+  - {fileID: 2100000, guid: 342cc91ca506ad644bdf1bf250ee147e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1441,7 +1441,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.01
   far clip plane: 5000
   field of view: 40
   orthographic: 0
@@ -1469,8 +1469,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.124511234, y: 0, z: 0, w: 0.9922182}
-  m_LocalPosition: {x: -2.84, y: 19.87997, z: -212}
+  m_LocalRotation: {x: 0.12451124, y: -0.0000000073926025, z: 9.2768115e-10, w: 0.9922182}
+  m_LocalPosition: {x: -2.84, y: 19.87997, z: 58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1523,7 +1523,7 @@ GameObject:
   - component: {fileID: 1103287229}
   m_Layer: 0
   m_Name: Third Person Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1537,7 +1537,7 @@ Transform:
   m_GameObject: {fileID: 1103287227}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.84, y: 14.87997, z: -195}
+  m_LocalPosition: {x: -2.84, y: 14.87997, z: 75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1557,7 +1557,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1103287230}
-  speed: 20
+  cam: {fileID: 963194228}
+  speed: 10
+  turnSmoothTime: 0.1
 --- !u!143 &1103287230
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1594,6 +1596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1211162839}
   - component: {fileID: 1211162838}
+  - component: {fileID: 1211162840}
   m_Layer: 0
   m_Name: Third Person Camera
   m_TagString: Untagged
@@ -1625,7 +1628,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.01
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
@@ -1715,7 +1718,7 @@ Transform:
   m_GameObject: {fileID: 1211162837}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.84, y: 19.87997, z: -212}
+  m_LocalPosition: {x: -2.84, y: 19.87997, z: 58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1724,6 +1727,36 @@ Transform:
   - {fileID: 789045856}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1211162840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211162837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 64
+  m_IgnoreTag: Player
+  m_TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_MinimumDistanceFromTarget: 0.1
+  m_AvoidObstacles: 1
+  m_DistanceLimit: 0
+  m_MinimumOcclusionTime: 0
+  m_CameraRadius: 0.1
+  m_Strategy: 0
+  m_MaximumEffort: 4
+  m_SmoothingTime: 0
+  m_Damping: 0.6
+  m_DampingWhenOccluded: 0.6
+  m_OptimalTargetDistance: 0
 --- !u!1 &1420921725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1738,7 +1771,7 @@ GameObject:
   - component: {fileID: 1420921728}
   - component: {fileID: 1420921727}
   - component: {fileID: 1420921726}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4768,7 +4801,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.01
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
@@ -4792,7 +4825,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1706402500}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12451123, y: -0, z: -0, w: 0.9922182}
+  m_LocalRotation: {x: 0.12451124, y: -0, z: -0, w: 0.9922182}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5078,8 +5111,8 @@ Transform:
   m_GameObject: {fileID: 2022796243}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 471.46, y: 331.99997, z: 207.8}
-  m_LocalScale: {x: 1.21875, y: 1, z: 2.5579686}
+  m_LocalPosition: {x: 347.08, y: 331.99997, z: 358.65}
+  m_LocalScale: {x: 0.89549553, y: 1, z: 1.8293227}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 932649711}
