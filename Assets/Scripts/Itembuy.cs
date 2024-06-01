@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class BuyableItem : MonoBehaviour
+public class ItemBuy : MonoBehaviour
 {
-    public string itemName;
-    public Transform player;
-    public float buyDistance = 1f;
-    public GameObject buyMessage; // Reference to the 3D Text object
+    public string itemName; 
+    public Transform player; 
+    public float buyDistance = 5f; 
+    public GameObject buyMessage; 
 
     private bool isPlayerInRange = false;
 
