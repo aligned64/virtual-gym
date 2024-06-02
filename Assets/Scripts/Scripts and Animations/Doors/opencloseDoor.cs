@@ -20,7 +20,8 @@ namespace SojaExiles
             if (Player)
             {
                 float dist = Vector3.Distance(Player.position, transform.position);
-                if (dist < 15)
+                Debug.Log("Distance to player: " + dist);
+                if (dist < 230)
                 {
                     if (open == false)
                     {
@@ -36,6 +37,7 @@ namespace SojaExiles
                             StartCoroutine(closing());
                         }
                     }
+
                 }
             }
         }
