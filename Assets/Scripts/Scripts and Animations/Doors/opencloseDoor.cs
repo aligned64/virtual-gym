@@ -21,7 +21,7 @@ namespace SojaExiles
             {
                 float dist = Vector3.Distance(Player.position, transform.position);
                 Debug.Log("Distance to player: " + dist);
-                if (dist < 230)
+                if (dist < 190)
                 {
                     if (open == false)
                     {
