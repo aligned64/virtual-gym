@@ -10,6 +10,11 @@ The Virtual Gym is an application designed to **simulate a gym environment** whe
 
 ## 🛠 Development Tools Used
 
+The development follows the **Git Flow methodology**, which organizes the codebase into different branches for better collaboration and version control. **The main branch serves as the stable release branch, while the develop branch contains ongoing development work** for the next release. Additionally, there are several feature branches (prefixed with **'feat/'**) and fix branches (prefixed with **'fix/'**) that contain individual features, testing implementations, and bug fixes, respectively.
+
+- **Unity**: For developing the interactive virtual gym environment.
+- **C#**: For scripting the application logic.
+
 ## 📜 License
 
 ## 🙏 Acknowledgements
