@@ -13,3 +13,5 @@ The Virtual Gym is an application designed to **simulate a gym environment** whe
 ## 📜 License
 
 ## 🙏 Acknowledgements
+
+Credits to [VNB (Leo)](https://vnbp.itch.io/) for low poly Gym set assets.
