@@ -11,7 +11,7 @@ public class ItemBuy : MonoBehaviour
 
     void Start()
     {
-        buyMessage.SetActive(false); // Hide the message initially
+        buyMessage.SetActive(false); 
     }
 
     void Update()
@@ -21,12 +21,12 @@ public class ItemBuy : MonoBehaviour
         if (distance <= buyDistance)
         {
             isPlayerInRange = true;
-            buyMessage.SetActive(true); // Show the message
+            buyMessage.SetActive(true); 
         }
         else
         {
             isPlayerInRange = false;
-            buyMessage.SetActive(false); // Hide the message
+            buyMessage.SetActive(false); 
         }
 
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
@@ -37,13 +37,13 @@ public class ItemBuy : MonoBehaviour
 
     void BuyItem()
     {
-        // Add the item to the inventory
+        
         Inventory.instance.AddItem(itemName);
 
-        // Hide the buy message
+        
         buyMessage.SetActive(false);
 
-        // Remove the item from the scene
+        
         Destroy(gameObject);
     }
 }

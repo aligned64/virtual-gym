@@ -9,7 +9,7 @@ public class HealthInfo : MonoBehaviour
     public TextMeshProUGUI weightText;
     public TextMeshProUGUI enduranceText;
 
-    private int muscle = 15; // Example initial values
+    private int muscle = 15;
     private int weight = 60;
     private int endurance = 15;
 
