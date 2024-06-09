@@ -15,6 +15,7 @@ public class ItemActivator : MonoBehaviour
     {
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log("E key pressed. Activating item: " + item.itemName);
             ActivateItem();
         }
     }
@@ -23,6 +24,7 @@ public class ItemActivator : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Player entered trigger zone for item: " + item.itemName);
             isPlayerNearby = true;
         }
     }
@@ -31,6 +33,7 @@ public class ItemActivator : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Player exited trigger zone for item: " + item.itemName);
             isPlayerNearby = false;
         }
     }
@@ -40,6 +43,7 @@ public class ItemActivator : MonoBehaviour
         uiManager.UpdateItemUI(item);
     }
 
+    // Optional: Draw Gizmos to visualize the trigger area
     void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
