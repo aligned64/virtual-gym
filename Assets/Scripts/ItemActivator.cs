@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class ItemActivator : MonoBehaviour
 {
     public Item item;
@@ -35,6 +34,7 @@ public class ItemActivator : MonoBehaviour
         {
             Debug.Log("Player exited trigger zone for item: " + item.itemName);
             isPlayerNearby = false;
+            uiManager.HideItemPanel(); // Hide the panel when the player exits the trigger zone
         }
     }
 
