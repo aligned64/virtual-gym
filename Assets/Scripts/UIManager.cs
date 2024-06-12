@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        HideItemPanel();
+        HideItemPanel(); // Hide the panel when the game starts
     }
 
     public void UpdateItemUI(Item item)
@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
             itemNameText.text = item.itemName;
             itemDescriptionText.text = item.description;
             itemImage.sprite = item.itemImage;
-            ShowItemPanel();
+            ShowItemPanel(); // Show the panel when updating the item
         }
         else
         {
