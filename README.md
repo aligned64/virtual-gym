@@ -45,8 +45,13 @@ We adhere to the Git Flow methodology for efficient collaboration and version co
 - **Unity**: For developing the interactive virtual gym environment.
 - **C#**: For scripting the application logic.
 
-## 📜 License
+## 👥 Contributors
 
+- [GitHub Profile](https://github.com/aligned64)
+- [GitHub Profile](https://github.com/Andrewmgk)
+- [GitHub Profile](https://github.com/MelinaMoraiti)
+- [GitHub Profile](https://github.com/marioskam3)
+  
 ## 🙏 Acknowledgements
 
 Credits to [VNB (Leo)](https://vnbp.itch.io/) for low poly Gym set assets.
