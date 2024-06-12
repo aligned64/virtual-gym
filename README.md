@@ -44,13 +44,6 @@ We adhere to the Git Flow methodology for efficient collaboration and version co
 
 - **Unity**: For developing the interactive virtual gym environment.
 - **C#**: For scripting the application logic.
-
-## 👥 Contributors
-
-- **aligned64** - [GitHub Profile](https://github.com/aligned64)
-- **Andrewmgk** - [GitHub Profile](https://github.com/Andrewmgk)
-- **MelinaMoraiti** - [GitHub Profile](https://github.com/MelinaMoraiti)
-- **marioskam3** - [GitHub Profile](https://github.com/marioskam3)
   
 ## 🙏 Acknowledgements
 
