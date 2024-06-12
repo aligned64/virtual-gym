@@ -32,6 +32,7 @@ public class ItemActivator : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerNearby = false;
+            uiManager.HideItemPanel();
         }
     }
 
