@@ -39,6 +39,8 @@ We adhere to the Git Flow methodology for efficient collaboration and version co
 - **Develop Branch:** Contains ongoing development work for the next release.
 - **Feature Branches (feat/):** Dedicated branches for individual features.
 - **Fix Branches (fix/):** Dedicated branches for bug fixes.
+  
+### Tools and Technologies
 
 - **Unity**: For developing the interactive virtual gym environment.
 - **C#**: For scripting the application logic.
