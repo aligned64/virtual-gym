@@ -7,10 +7,17 @@ public class UIManager : MonoBehaviour
     public Text itemNameText;
     public Text itemDescriptionText;
     public Image itemImage;
+    public Button okButton;
+    public Button cancelButton;
+    private PlayerController playerController;
 
     void Start()
     {
-        HideItemPanel(); // Hide the panel when the game starts
+        playerController = FindObjectOfType<PlayerController>();
+
+        HideItemPanel(); // Hide the panel initially
+        okButton.onClick.AddListener(OnOkButtonClick);
+        cancelButton.onClick.AddListener(OnCancelButtonClick);
     }
 
     public void UpdateItemUI(Item item)
@@ -31,10 +38,22 @@ public class UIManager : MonoBehaviour
     public void ShowItemPanel()
     {
         itemPanel.SetActive(true);
+        playerController.LockControls();
     }
 
     public void HideItemPanel()
     {
         itemPanel.SetActive(false);
+        playerController.UnlockControls();
+    }
+
+    private void OnOkButtonClick()
+    {
+        HideItemPanel();
+    }
+
+    private void OnCancelButtonClick()
+    {
+        HideItemPanel();
     }
 }
