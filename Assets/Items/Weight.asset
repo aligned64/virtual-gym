@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5aaa1f53fc9c9f42873fdf9799adebe, type: 3}
   m_Name: Weight
   m_EditorClassIdentifier: 
-  id: 0
-  itemName: 
-  value: 0
-  icon: {fileID: 0}
+  id: 1
+  itemName: Weight
+  value: 1
+  icon: {fileID: 21300000, guid: 602e596816acd944eb28413ee09c4768, type: 3}

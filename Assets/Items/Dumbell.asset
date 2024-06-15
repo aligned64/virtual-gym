@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5aaa1f53fc9c9f42873fdf9799adebe, type: 3}
   m_Name: Dumbell
   m_EditorClassIdentifier: 
-  id: 0
-  itemName: 
-  value: 0
-  icon: {fileID: 0}
+  id: 2
+  itemName: Dumbell
+  value: 1
+  icon: {fileID: 21300000, guid: 3138db89bed99724e95aa2cd73f44a9f, type: 3}

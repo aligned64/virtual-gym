@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5aaa1f53fc9c9f42873fdf9799adebe, type: 3}
   m_Name: WeightLossBook
   m_EditorClassIdentifier: 
-  id: 0
-  itemName: 
-  value: 0
-  icon: {fileID: 0}
+  id: 3
+  itemName: WeightLossBook
+  value: 1
+  icon: {fileID: 21300000, guid: 4700491b038181449ac296cf9e880add, type: 3}
