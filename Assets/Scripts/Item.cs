@@ -1,9 +1,11 @@
 using UnityEngine;
 
-[System.Serializable]
-public class Item
+[CreateAssetMenu(fileName="New Item",menuName ="Item/Create New Item")]
+
+public class Item : ScriptableObject
 {
+    public int id;
     public string itemName;
-    public string description;
-    public Sprite itemImage;
+    public int value;
+    public Sprite icon;
 }
