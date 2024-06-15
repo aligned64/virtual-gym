@@ -41,7 +41,7 @@ public class ItemBuy : MonoBehaviour
         Inventory.instance.AddItem(itemName);
 
         
-        buyMessage.SetActive(false);
+        buyMessage.SetActive(true);
 
         
         Destroy(gameObject);

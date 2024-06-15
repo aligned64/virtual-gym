@@ -17,7 +17,7 @@ public class HealthInfo : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             isPanelVisible = !isPanelVisible;
             healthInfoPanel.SetActive(isPanelVisible);
