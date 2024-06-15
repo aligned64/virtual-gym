@@ -45,7 +45,7 @@ public class HealthInfo : MonoBehaviour
 
     string GetWeightCondition(int value)
     {
-        if (value >= 0 && value <= 25) return "Λιγνός";
+        if (value >= 0 && value <= 25) return "Λεπτός";
         else if (value > 25 && value <= 50) return "Κανονικό";
         else if (value > 50 && value <= 75) return "Υπερβαρός";
         else return "Παχύσαρκος";
@@ -57,5 +57,13 @@ public class HealthInfo : MonoBehaviour
         else if (value > 25 && value <= 50) return "Χαμηλή";
         else if (value > 50 && value <= 75) return "Υψηλή";
         else return "Άριστη";
+    }
+
+    public void Change()
+    {
+        muscle += 5;
+        weight -= 5;
+        endurance += +5;
+        UpdateHealthInfo();
     }
 }
