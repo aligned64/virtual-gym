@@ -13,7 +13,7 @@ public class ItemActivator : MonoBehaviour
 
     void Update()
     {
-        if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
+        if (isPlayerNearby && Input.GetKeyDown(KeyCode.E) && !uiManager.itemPanel.activeSelf)
         {
             ActivateItem();
         }
