@@ -10,10 +10,12 @@ public class UIManager : MonoBehaviour
     public Button okButton;
     public Button cancelButton;
     private PlayerController playerController;
+    private HealthInfo healthInfo;
 
     void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
+        healthInfo = FindObjectOfType<HealthInfo>();
 
         HideItemPanel(); // Hide the panel initially
         okButton.onClick.AddListener(OnOkButtonClick);
@@ -50,6 +52,7 @@ public class UIManager : MonoBehaviour
     private void OnOkButtonClick()
     {
         HideItemPanel();
+        healthInfo.Change();
     }
 
     private void OnCancelButtonClick()
