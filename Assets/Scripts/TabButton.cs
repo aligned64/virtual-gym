@@ -15,33 +15,29 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     public UnityEvent onTabDeselected;
     public List<Color> activeColors;
     public List<Color> inactiveColors;
+    public void SetColors(List<Color> colors)
+    {
+        if (colors.Count == 2)
+        {
+            background.color = colors[0];
+            tmpText.color = colors[1];
+        }
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         tabGroup.OnTabSelected(this);
-        if (activeColors.Count == 2)
-        {
-            background.color = activeColors[0];
-            tmpText.color = activeColors[1];
-        }
+        SetColors(activeColors);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         tabGroup.OnTabEnter(this);
-        if (activeColors.Count == 2)
-        {
-            background.color = activeColors[0];
-            tmpText.color = activeColors[1];
-        }
+        SetColors(activeColors);
     }
     public void OnPointerExit(PointerEventData eventData)
     {
         tabGroup.OnTabExit(this);
-        if (inactiveColors.Count == 2)
-        {
-            background.color = inactiveColors[0];
-            tmpText.color = inactiveColors[1];
-        }
+        SetColors(inactiveColors);
     }
 
     void Start()
@@ -64,4 +60,5 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
         }
 
     }
+
 }
