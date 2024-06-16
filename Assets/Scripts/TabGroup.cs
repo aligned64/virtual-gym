@@ -9,6 +9,7 @@ public class TabGroup : MonoBehaviour
     public Sprite tabHover;
     public Sprite tabActive;
     public TabButton selectedTab;
+    public PanelGroup panelGroup;
     public List<GameObject> objectsToSwap;
     public void Subcribe(TabButton button)
     {
@@ -53,6 +54,10 @@ public class TabGroup : MonoBehaviour
             {
                 objectsToSwap[i].SetActive(false);
             }
+        }
+        if (panelGroup != null)
+        {
+            panelGroup.setPageIndex(button.transform.GetSiblingIndex());
         }
     }
     public void ResetTabs()
