@@ -11,13 +11,10 @@ public class getName : MonoBehaviour
 
         // Get the TMP_Text component attached to this GameObject
         tmpText = GetComponent<TMP_Text>();
-
-        Debug.Log(tmpText.text);
         if (tmpText != null)
         {
             // Get the name of the parent GameObject
             string parentName = transform.parent != null ? transform.parent.name : "No Parent";
-            Debug.Log(parentName);
             // Assign the parent's name to the TMP text component
             tmpText.text = parentName;
         }
