@@ -1,19 +1,36 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FlexibleGridLayout : LayoutGroup
 {
+    public enum FitType
+    {
+        Uniform, 
+        Width,
+        Height
+    }
     public int rows;
     public int columns;
     public Vector2 cellSize;
     public Vector2 spacing;
+    public FitType fitType;
+
     public override void CalculateLayoutInputVertical()
     {
         base.CalculateLayoutInputHorizontal();
         float sqrRt = Mathf.Sqrt(transform.childCount);
         rows = Mathf.CeilToInt(sqrRt);
         columns = Mathf.CeilToInt(sqrRt);
+        if (fitType == FitType.Width)
+        {
+            rows = Mathf.CeilToInt(transform.childCount / (float)columns);
+        }
+        if (fitType == FitType.Height)
+        {
+            rows = Mathf.CeilToInt(transform.childCount / (float)rows);
+        }
         float parentWidth = rectTransform.rect.width;
         float parentHeight = rectTransform.rect.height;
 

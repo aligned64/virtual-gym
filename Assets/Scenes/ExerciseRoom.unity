@@ -338,34 +338,10 @@ MonoBehaviour:
   tmpText: {fileID: 396096227}
   onTabSelected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: 
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
+      m_Calls: []
   onTabDeselected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: 
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
+      m_Calls: []
   activeColors:
   - {r: 1, g: 0.5568628, b: 0.44705883, a: 1}
   - {r: 0.91764706, g: 0.9490196, b: 0.9372549, a: 1}
@@ -704,19 +680,7 @@ MonoBehaviour:
   tmpText: {fileID: 1505584163}
   onTabSelected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onTabDeselected:
     m_PersistentCalls:
       m_Calls: []
@@ -1066,7 +1030,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1105,6 +1069,7 @@ MonoBehaviour:
   columns: 2
   cellSize: {x: 54, y: 255}
   spacing: {x: 1, y: 5}
+  fitType: 0
 --- !u!1001 &123783946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5675,34 +5640,10 @@ MonoBehaviour:
   tmpText: {fileID: 1939737853}
   onTabSelected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: 
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
+      m_Calls: []
   onTabDeselected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: 
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
+      m_Calls: []
   activeColors:
   - {r: 1, g: 0.5568628, b: 0.44705883, a: 1}
   - {r: 0.91764706, g: 0.9490196, b: 0.9372549, a: 1}
@@ -13519,6 +13460,7 @@ MonoBehaviour:
   columns: 2
   cellSize: {x: 54.3, y: 254}
   spacing: {x: 0.7, y: 6}
+  fitType: 0
 --- !u!1001 &763940785
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13716,7 +13658,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789045854}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.013174828, y: -0.10712234, z: 0.0014196126, w: 0.99415755}
+  m_LocalRotation: {x: 0.013174828, y: -0.10712234, z: 0.0014196124, w: 0.99415755}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14294,6 +14236,7 @@ MonoBehaviour:
   columns: 2
   cellSize: {x: 51, y: 260.25}
   spacing: {x: 1, y: 5}
+  fitType: 0
 --- !u!1 &885856606
 GameObject:
   m_ObjectHideFlags: 0
@@ -15574,7 +15517,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -15745,7 +15688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21568628, g: 0.46666667, b: 0.44313726, a: 1}
+  m_Color: {r: 0.91764706, g: 0.9490196, b: 0.9372549, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -16371,6 +16314,7 @@ MonoBehaviour:
   columns: 0
   cellSize: {x: 0, y: 0}
   spacing: {x: 0, y: 0}
+  fitType: 0
 --- !u!1 &1116941896
 GameObject:
   m_ObjectHideFlags: 0
@@ -27147,6 +27091,7 @@ MonoBehaviour:
   columns: 0
   cellSize: {x: 0, y: 0}
   spacing: {x: 0, y: 0}
+  fitType: 0
 --- !u!95 &1499208519 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7296751938604968510, guid: e9a47cdb5968d66499f6b4ee53467cd4, type: 3}
@@ -28186,34 +28131,10 @@ MonoBehaviour:
   tmpText: {fileID: 2112444144}
   onTabSelected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: 
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
+      m_Calls: []
   onTabDeselected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: 
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
+      m_Calls: []
   activeColors:
   - {r: 1, g: 0.5568628, b: 0.44705883, a: 1}
   - {r: 0.91764706, g: 0.9490196, b: 0.9372549, a: 1}
@@ -29505,34 +29426,10 @@ MonoBehaviour:
   tmpText: {fileID: 2069605574}
   onTabSelected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: 
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
+      m_Calls: []
   onTabDeselected:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: 
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
+      m_Calls: []
   activeColors:
   - {r: 1, g: 0.5568628, b: 0.44705883, a: 1}
   - {r: 0.91764706, g: 0.9490196, b: 0.9372549, a: 1}
@@ -38999,6 +38896,7 @@ MonoBehaviour:
   columns: 0
   cellSize: {x: 0, y: 0}
   spacing: {x: 0, y: 0}
+  fitType: 0
 --- !u!1001 &2103040404
 PrefabInstance:
   m_ObjectHideFlags: 0
