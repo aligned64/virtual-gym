@@ -51,6 +51,7 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
         {
             onTabSelected.Invoke();
         }
+        SetColors(activeColors);
     }
     public void Deselect()
     {
@@ -58,7 +59,7 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
         {
             onTabDeselected.Invoke();
         }
-
+        SetColors(inactiveColors);
     }
 
 }

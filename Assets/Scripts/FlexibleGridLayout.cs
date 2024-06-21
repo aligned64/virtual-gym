@@ -9,25 +9,34 @@ public class FlexibleGridLayout : LayoutGroup
     {
         Uniform, 
         Width,
-        Height
+        Height,
+        FixedRows,
+        FixedColumns
     }
     public int rows;
     public int columns;
     public Vector2 cellSize;
     public Vector2 spacing;
     public FitType fitType;
-
+    public bool fitX;
+    public bool fitY;
     public override void CalculateLayoutInputVertical()
     {
         base.CalculateLayoutInputHorizontal();
+        if (fitType == FitType.Width || fitType == FitType.Height || fitType == FitType.Uniform)
+        {
+
+            rows = Mathf.CeilToInt((float)Mathf.Sqrt(transform.childCount));
+            columns = Mathf.CeilToInt((float)Mathf.Sqrt(transform.childCount));
+        }
         float sqrRt = Mathf.Sqrt(transform.childCount);
         rows = Mathf.CeilToInt(sqrRt);
         columns = Mathf.CeilToInt(sqrRt);
-        if (fitType == FitType.Width)
+        if (fitType == FitType.Width || fitType == FitType.FixedColumns)
         {
             rows = Mathf.CeilToInt(transform.childCount / (float)columns);
         }
-        if (fitType == FitType.Height)
+        if (fitType == FitType.Height || fitType == FitType.FixedRows)
         {
             rows = Mathf.CeilToInt(transform.childCount / (float)rows);
         }
@@ -37,8 +46,8 @@ public class FlexibleGridLayout : LayoutGroup
         float cellWidth = parentWidth / (float) columns - (spacing.x/(float)columns * 2) - (padding.left/(float)columns) - (padding.right/(float)columns);
         float cellHeight = parentHeight / (float) rows - (spacing.y / (float)rows * 2) - (padding.top / (float)rows) - (padding.bottom / (float)rows);
 
-        cellSize.x = cellWidth;
-        cellSize.y = cellHeight;
+        cellSize.x = fitX ? cellWidth : cellSize.x;
+        cellSize.y = fitY? cellHeight : cellSize.y;
         for (int i = 0; i < rectChildren.Count; i++)
         {
             int rowCount = i / columns;
