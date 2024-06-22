@@ -43,7 +43,9 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     void Start()
     {
         background = GetComponent<Image>();
+        tmpText = GetComponentInChildren<TMP_Text>(); // Ensure tmpText is assigned
         tabGroup.Subcribe(this);
+        SetColors(inactiveColors); // Initialize with inactive colors
     }
     public void Select()
     {

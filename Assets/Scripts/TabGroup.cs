@@ -69,6 +69,7 @@ public class TabGroup : MonoBehaviour
                 continue;
             }
             button.background.sprite = tabIdle;
+            button.SetColors(button.inactiveColors);
         }
 
     }
