@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class ExerciseActivator : MonoBehaviour
 {
-    public Exercise item;
-    private ExerciseManager exerciseManager;
-    private bool isPlayerNearby = false;
+    public Exercise item; // Reference to the Exercise item
+    private ExerciseManager exerciseManager; // Reference to the ExerciseManager
+    private bool isPlayerNearby = false; // Flag to check if player is nearby
 
     void Start()
     {

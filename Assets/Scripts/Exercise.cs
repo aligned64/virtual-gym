@@ -4,4 +4,5 @@ using UnityEngine;
 public class Exercise
 {
     public string itemName;
+    public string description;
 }

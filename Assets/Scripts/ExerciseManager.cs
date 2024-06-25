@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,26 +6,26 @@ public class ExerciseManager : MonoBehaviour
 {
     public GameObject itemPanel;
     public Text itemNameText;
+    public Text itemDescriptionText;
     public Button okButton;
     public Button cancelButton;
     private PlayerController playerController;
-    private HealthInfo healthInfo;
 
     void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
-        healthInfo = FindObjectOfType<HealthInfo>();
 
-        HideItemPanel(); 
+        HideItemPanel(); // Hide the panel initially
         okButton.onClick.AddListener(OnOkButtonClick);
         cancelButton.onClick.AddListener(OnCancelButtonClick);
     }
 
     public void UpdateItemUI(Exercise item)
     {
-        if (itemNameText != null)
+        if (itemNameText != null && itemDescriptionText != null)
         {
             itemNameText.text = item.itemName;
+            itemDescriptionText.text = item.description;
             ShowItemPanel(); // Show the panel when updating the item
         }
         else
@@ -48,9 +49,7 @@ public class ExerciseManager : MonoBehaviour
     private void OnOkButtonClick()
     {
         Debug.Log("OK Button Clicked");
-        healthInfo.Change();
         HideItemPanel();
-
     }
 
     private void OnCancelButtonClick()
