@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
 
 public class InventoryManager : MonoBehaviour
@@ -14,23 +13,36 @@ public class InventoryManager : MonoBehaviour
     public Transform ItemContent;
     public GameObject InventoryItem;
 
-    public void Awake()
+    private void Awake()
     {
         Instance = this;
     }
 
     public void Add(Item item)
-    { 
-        items.Add(item); 
+    {
+        items.Add(item);
+        Debug.Log("Item added: " + item.itemName);
     }
 
     public void Remove(Item item)
     {
         items.Remove(item);
+        Debug.Log("Item removed: " + item.itemName);
     }
 
     public void ListItems()
     {
+        if (ItemContent == null)
+        {
+            Debug.LogError("ItemContent is not assigned.");
+            return;
+        }
+
+        if (InventoryItem == null)
+        {
+            Debug.LogError("InventoryItem prefab is not assigned.");
+            return;
+        }
 
         foreach (Transform item in ItemContent)
         {
@@ -40,11 +52,28 @@ public class InventoryManager : MonoBehaviour
         foreach (var item in items)
         {
             GameObject obj = Instantiate(InventoryItem, ItemContent);
-            var itemName = obj.transform.Find("ItemName").GetComponent<Text>();
-            var itemIcon = obj.transform.Find("itemIcon").GetComponent<Image>();
 
-            itemName.text = item.itemName;
-            itemIcon.sprite = item.icon;
+            // Ensure itemName and itemIcon exist and are assigned properly
+            var itemName = obj.transform.Find("ItemName")?.GetComponent<Text>();
+            var itemIcon = obj.transform.Find("ItemIcon")?.GetComponent<Image>();
+
+            if (itemName != null)
+            {
+                itemName.text = item.itemName;
+            }
+            else
+            {
+                Debug.LogError("ItemName Text component not found on " + obj.name);
+            }
+
+            if (itemIcon != null)
+            {
+                itemIcon.sprite = item.icon;
+            }
+            else
+            {
+                Debug.LogError("itemIcon Image component not found on " + obj.name);
+            }
         }
     }
 }
