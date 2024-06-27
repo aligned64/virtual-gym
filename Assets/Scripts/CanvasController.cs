@@ -1,38 +1,49 @@
-
 using UnityEngine;
 
 public class CanvasController : MonoBehaviour
 {
-    // Reference to the Canvas component
-    private Canvas canvas;
+    private Canvas Canvas;
+    private PlayerController playerController;
 
-    // Start is called before the first frame update
     void Start()
     {
-        // Get the Canvas component attached to this GameObject
-        canvas = GetComponent<Canvas>();
-
-        // Ensure the canvas is not visible by default
-        if (canvas != null)
+        Canvas = GetComponent<Canvas>();
+        // Ensure the exercisesPanel is not visible by default
+        if (Canvas != null)
         {
-            canvas.enabled = false;
+            Canvas.enabled = false;
         }
         else
         {
             Debug.LogWarning("Canvas component not found on " + gameObject.name);
         }
+
+        // Find the PlayerController in the scene
+        playerController = FindObjectOfType<PlayerController>();
+
+        if (playerController == null)
+        {
+            Debug.LogError("PlayerController not found in the scene.");
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         // Check if the 'F' key is pressed
         if (Input.GetKeyDown(KeyCode.F))
         {
-            // Toggle the canvas visibility
-            if (canvas != null)
+            // Toggle the exercisesPanel visibility
+            if (Canvas != null)
             {
-                canvas.enabled = !canvas.enabled;
+                Canvas.enabled = !Canvas.enabled;
+                if (Canvas.enabled)
+                {
+                    playerController.LockControls();
+                }
+                else
+                {
+                    playerController.UnlockControls();
+                }
             }
         }
     }

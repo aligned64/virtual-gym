@@ -8,6 +8,7 @@ public class HealthInfo : MonoBehaviour
     public TextMeshProUGUI muscleText;
     public TextMeshProUGUI weightText;
     public TextMeshProUGUI enduranceText;
+    private PlayerController playerController;
 
     private int muscle = 15;
     private int weight = 60;
@@ -15,16 +16,33 @@ public class HealthInfo : MonoBehaviour
 
     private bool isPanelVisible = false;
 
+    private void Start()
+    {
+        playerController = FindObjectOfType<PlayerController>();
+        healthInfoPanel.SetActive(false);
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            isPanelVisible = !isPanelVisible;
-            healthInfoPanel.SetActive(isPanelVisible);
-            if (isPanelVisible)
-            {
-                UpdateHealthInfo();
-            }
+            ToggleHealthInfoPanel();
+        }
+    }
+
+    void ToggleHealthInfoPanel()
+    {
+        isPanelVisible = !isPanelVisible;
+        healthInfoPanel.SetActive(isPanelVisible);
+
+        if (isPanelVisible)
+        {
+            UpdateHealthInfo();
+            playerController.LockControls();
+        }
+        else
+        {
+            playerController.UnlockControls();
         }
     }
 
@@ -63,7 +81,7 @@ public class HealthInfo : MonoBehaviour
     {
         muscle += 5;
         weight -= 5;
-        endurance += +5;
+        endurance += 5;
         UpdateHealthInfo();
     }
 }
