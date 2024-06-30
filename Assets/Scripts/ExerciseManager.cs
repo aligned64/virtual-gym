@@ -10,10 +10,12 @@ public class ExerciseManager : MonoBehaviour
     public Button okButton;
     public Button cancelButton;
     private PlayerController playerController;
+    private HealthInfo healthInfo;
 
     void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
+        healthInfo = FindObjectOfType<HealthInfo>();
 
         HideItemPanel(); // Hide the panel initially
         okButton.onClick.AddListener(OnOkButtonClick);
@@ -49,6 +51,7 @@ public class ExerciseManager : MonoBehaviour
     private void OnOkButtonClick()
     {
         Debug.Log("OK Button Clicked");
+        healthInfo.Change();
         HideItemPanel();
     }
 
