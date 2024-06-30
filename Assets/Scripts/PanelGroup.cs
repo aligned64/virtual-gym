@@ -1,46 +1,21 @@
-using JetBrains.Annotations;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PanelGroup : MonoBehaviour
 {
-    public GameObject[] panels;
-    public TabGroup tabGroup;
-    public int panelIndex;
+    public List<GameObject> panels;
 
-    private void Awake()
+    public void SetPageIndex(int index)
     {
-        ShowCurrentPanel();
-    }
-    void ShowCurrentPanel()
-    {
-        for (int i = 0; i < panels.Length; i++)
+        if (panels == null || panels.Count == 0)
         {
-            if (i == panelIndex)
-            {
-                panels[i].SetActive(true);
-            }
-            else
-            {
-                panels[i].SetActive(false);
-            }
+            Debug.LogWarning("PanelGroup: No panels to switch between.");
+            return;
         }
-    }
-    public void setPageIndex(int index)
-    {
-        panelIndex = index;
-        ShowCurrentPanel();
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        for (int i = 0; i < panels.Count; i++)
+        {
+            panels[i].SetActive(i == index);
+        }
     }
 }

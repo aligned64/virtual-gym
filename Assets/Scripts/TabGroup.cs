@@ -11,15 +11,26 @@ public class TabGroup : MonoBehaviour
     public TabButton selectedTab;
     public PanelGroup panelGroup;
     public List<GameObject> objectsToSwap;
-    public void Subcribe(TabButton button)
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return) && selectedTab != null)
+        {
+            int currentIndex = tabButtons.IndexOf(selectedTab);
+            int nextIndex = (currentIndex + 1) % tabButtons.Count;
+            tabButtons[nextIndex].OnPointerClick(null);
+        }
+    }
+
+    public void Subscribe(TabButton button)
     {
         if (tabButtons == null)
         {
             tabButtons = new List<TabButton>();
         }
         tabButtons.Add(button);
-
     }
+
     public void OnTabEnter(TabButton button)
     {
         ResetTabs();
@@ -27,12 +38,13 @@ public class TabGroup : MonoBehaviour
         {
             button.background.sprite = tabHover;
         }
-        
     }
+
     public void OnTabExit(TabButton button)
     {
         ResetTabs();
     }
+
     public void OnTabSelected(TabButton button)
     {
         if (selectedTab != null)
@@ -40,26 +52,20 @@ public class TabGroup : MonoBehaviour
             selectedTab.Deselect();
         }
         selectedTab = button;
-        selectedTab.Select(); 
+        selectedTab.Select();
         ResetTabs();
         button.background.sprite = tabActive;
         int index = button.transform.GetSiblingIndex();
-        for (int i = 0; i< objectsToSwap.Count; i++)
+        for (int i = 0; i < objectsToSwap.Count; i++)
         {
-            if (i == index)
-            {
-                objectsToSwap[i].SetActive(true);
-            }
-            else
-            {
-                objectsToSwap[i].SetActive(false);
-            }
+            objectsToSwap[i].SetActive(i == index);
         }
         if (panelGroup != null)
         {
-            panelGroup.setPageIndex(button.transform.GetSiblingIndex());
+            panelGroup.SetPageIndex(button.transform.GetSiblingIndex());
         }
     }
+
     public void ResetTabs()
     {
         foreach (TabButton button in tabButtons)
@@ -71,7 +77,5 @@ public class TabGroup : MonoBehaviour
             button.background.sprite = tabIdle;
             button.SetColors(button.inactiveColors);
         }
-
     }
-
 }

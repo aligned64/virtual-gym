@@ -15,6 +15,26 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     public UnityEvent onTabDeselected;
     public List<Color> activeColors;
     public List<Color> inactiveColors;
+
+    private void Awake()
+    {
+        background = GetComponent<Image>();
+        tmpText = GetComponentInChildren<TMP_Text>();
+        if (tabGroup != null)
+        {
+            tabGroup.Subscribe(this);
+        }
+        SetColors(inactiveColors);
+    }
+
+    private void Update()
+    {
+        if (tabGroup.selectedTab == this && Input.GetKeyDown(KeyCode.Return))
+        {
+            OnPointerClick(null);
+        }
+    }
+
     public void SetColors(List<Color> colors)
     {
         if (colors.Count == 2)
@@ -23,45 +43,31 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
             tmpText.color = colors[1];
         }
     }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         tabGroup.OnTabSelected(this);
-        SetColors(activeColors);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         tabGroup.OnTabEnter(this);
-        SetColors(activeColors);
     }
+
     public void OnPointerExit(PointerEventData eventData)
     {
         tabGroup.OnTabExit(this);
-        SetColors(inactiveColors);
     }
 
-    void Start()
-    {
-        background = GetComponent<Image>();
-        tmpText = GetComponentInChildren<TMP_Text>(); // Ensure tmpText is assigned
-        tabGroup.Subcribe(this);
-        SetColors(inactiveColors); // Initialize with inactive colors
-    }
     public void Select()
     {
-        if (onTabSelected != null)
-        {
-            onTabSelected.Invoke();
-        }
+        onTabSelected?.Invoke();
         SetColors(activeColors);
     }
+
     public void Deselect()
     {
-        if (onTabDeselected != null)
-        {
-            onTabDeselected.Invoke();
-        }
+        onTabDeselected?.Invoke();
         SetColors(inactiveColors);
     }
-
 }
