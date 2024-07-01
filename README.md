@@ -42,10 +42,9 @@ We adhere to the Git Flow methodology for efficient collaboration and version co
   
 ### Tools and Technologies
 
-- **Unity Version: 2022.3.29f1**: Used Unity’s built-in physics engine for developing the realistic interactive virtual gym environment.
+- **Unity 2022.3.29f1**: Used Unity’s built-in physics engine for developing the realistic interactive virtual gym environment.
 - **C#**: For scripting the application logic.
 - **Visual Studio**: Integrated Development Environment (IDE).
-- 
   
 ## 🙏 Acknowledgements
 
