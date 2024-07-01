@@ -13,7 +13,7 @@ The Virtual Gym is an application designed to **simulate a gym environment** whe
   - [x] User can navigate through the virtual gym in first person view
   - [ ] Interaction with various gym objects and equipment
 - **Exercise and Nutrition Guidance:**
-  - [ ] Detailed guidance on gym exercises (Unity UI panels)
+  - [X] Detailed guidance on gym exercises (Unity UI panels)
   - [ ] Tailored nutritional advice (Unity UI panels)
 - **Progress Tracking:**
   - [ ] Track users' fitness progress (User profile UI)
