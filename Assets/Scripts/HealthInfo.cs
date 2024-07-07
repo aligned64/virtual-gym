@@ -80,7 +80,7 @@ public class HealthInfo : MonoBehaviour
     public void Change()
     {
         muscle += 5;
-        weight -= 5;
+        weight -= 1;
         endurance += 5;
         UpdateHealthInfo();
     }
